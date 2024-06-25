@@ -8,7 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "This PR was approved"
-  testing:
+  bump-version:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version}}
     steps:
-      - run: ls -la
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: 'main'
+          fetch-depth: '0'
+          fetch-tags: 'true'
+      - run: pip install -r ./.build/requirements.txt
+      - id: version
+        run: echo "version=$(python ./.build/bump_version.py)" >> "$GITHUB_OUTPUT"
+  check-version:
+    runs-on: ubuntu-latest
+    needs: bump-version
+    steps:
+      - env:
+          VERSION: ${{ needs.bump-version.outputs.version }}
+        run: echo "$VERSION"
