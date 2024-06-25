@@ -1,1 +1,1 @@
-git-changelog
+git-changelog==2.*
