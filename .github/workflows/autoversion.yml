@@ -25,9 +25,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Inject version to Helm chart
-        run: sed -i "s/VERSION/${{ needs.bump-version.outputs.version }}/g" ./Chart.yaml
-      - name: Check env
-        run: echo ${{ secrets.GITHUB_TOKEN }}
+        run: sed -i "s/^version:.*/version: ${{ needs.bump-version.outputs.version }}/g" ./Chart.yaml
       - name: Commit with version
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -37,3 +35,4 @@ jobs:
           git commit -am "[skip ci] Bump Version"
           git tag -a ${{ needs.bump-version.outputs.version }} -m "${{ needs.bump-version.outputs.version }}"
           git push
+          git push origin tag ${{ needs.bump-version.outputs.version }}
