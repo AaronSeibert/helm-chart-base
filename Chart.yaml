@@ -3,7 +3,7 @@ apiVersion: v2
 type: library
 name: base
 description: Base Helm Chart
-version: VERSION
+version: 0.2.0
 appVersion: ""
 home: https://charts.seibert.family
 sources:
