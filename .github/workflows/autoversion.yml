@@ -24,20 +24,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
       - name: Inject version to Helm chart
         env:
           VERSION: ${{ needs.bump-version.outputs.version }}
         run: |
           sed -i "s/^version:.*/version: $VERSION/g" ./Chart.yaml
-          cat ./Chart.yaml
-      - name: Configure Git
-        run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git commit -am "[skip ci] Updated Chart Version"
       - name: Create Changelog
         run: |
           pip install git-changelog
           git-changelog -B ${{ needs.bump-version.outputs.version }} -o CHANGELOG.md
+          git commit -am "[skip ci] Updated Changelog"
       - name: Commit with version
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
