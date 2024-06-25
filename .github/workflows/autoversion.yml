@@ -28,7 +28,7 @@ jobs:
         env:
           VERSION: ${{ needs.bump-version.outputs.version }}
         run: |
-          sed -i "s/^version:(.*)$/version: $VERSION/g" ./Chart.yaml
+          sed -i "s/^version:.*/version: $VERSION/g" ./Chart.yaml
           cat ./Chart.yaml
       - name: Commit with version
         env:
@@ -38,5 +38,4 @@ jobs:
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git commit -am "[skip ci] Bump Version"
           git tag -a ${{ needs.bump-version.outputs.version }} -m "${{ needs.bump-version.outputs.version }}"
-          git push
           git push origin tag ${{ needs.bump-version.outputs.version }}
