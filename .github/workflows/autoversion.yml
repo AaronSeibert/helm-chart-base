@@ -25,7 +25,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Inject version to Helm chart
-        run: sed -i "s/^version:.*/version: ${{ needs.bump-version.outputs.version }}/g" ./Chart.yaml
+        env:
+          VERSION: ${{ needs.bump-version.outputs.version }}
+        run: |
+          sed -i "s/^version:(.*)$/version: $VERSION/g" ./Chart.yaml
       - name: Commit with version
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
