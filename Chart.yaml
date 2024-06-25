@@ -5,9 +5,9 @@ name: base
 description: Base Helm Chart
 version: 1.0.10
 appVersion: ""
-home: https://helm.seibert.family
+home: https://charts.seibert.family
 sources:
-  - https://github.com/aaronseibert/helm-charts
+  - https://github.com/AaronSeibert/helm-chart-base
 keywords:
   - library-chart
 maintainers:
