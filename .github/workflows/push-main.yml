@@ -25,6 +25,8 @@ jobs:
         with:
           path: artifacts
           merge-multiple: true
+      - name: DEBUG - list artifacts
+        run: ls -la artifacts/
       - name: Update Generated Files
         run: |
           cat artifacts/readme > README.md
