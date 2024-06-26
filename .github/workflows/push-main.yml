@@ -20,25 +20,24 @@ jobs:
       - name: Switch to main branch
         run: |
           git checkout main
-      - name: Retrieve Generated Readme
+      - name: Retrieve Generated Files
         uses: actions/download-artifact@v4
         with:
-          name: readme
-          path: README.md
-      - name: Retrieve Generated Chart
-        uses: actions/download-artifact@v4
-        with:
-          name: chart
-          path: Chart.yaml
-      - name: Retrieve Generated Changelog
-        uses: actions/download-artifact@v4
-        with:
-          name: changelog
-          path: CHANGELOG.md
-      - name: Commit with version
+          path: artifacts
+          merge-multiple: true
+      - name: Update Generated Files
+        run: |
+          cat artifacts/readme > README.md
+          cat artifacts/chart > Chart.yaml
+          cat artifacts/changelog > CHANGELOG.md
+      - name: Commit Changes
+        run: |
+          git commit -am "ci: $GITHUB_WORKFLOW [skip ci]"
+      - name: Tag changes
+        run: |
+          git tag -a ${{ needs.version.outputs.version }} -m "ci: tag version ${{ needs.version.outputs.version }} [skip-ci]"
+      - name: Push changes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git commit -am "ci: $GITHUB_WORKFLOW [skip ci]"
-          git tag -a ${{ needs.version.outputs.version }} -m "ci: tag version ${{ needs.version.outputs.version }} [skip-ci]"
           git push --follow-tags
