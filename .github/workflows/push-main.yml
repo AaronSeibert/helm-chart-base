@@ -29,9 +29,9 @@ jobs:
         run: ls -la artifacts/
       - name: Update Generated Files
         run: |
-          cat artifacts/readme > README.md
-          cat artifacts/chart > Chart.yaml
-          cat artifacts/changelog > CHANGELOG.md
+          cat artifacts/README.md > README.md
+          cat artifacts/Chart.yaml > Chart.yaml
+          cat artifacts/CHANGELOG.md > CHANGELOG.md
       - name: Commit Changes
         run: |
           git commit -am "ci: $GITHUB_WORKFLOW [skip ci]"

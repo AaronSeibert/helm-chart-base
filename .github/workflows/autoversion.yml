@@ -34,7 +34,7 @@ jobs:
         run: |
           sed -i "s/^version:.*/version: $VERSION/g" ./Chart.yaml
       - name: Upload Chart.yaml for other flows 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: chart
           path: Chart.yaml
@@ -51,7 +51,7 @@ jobs:
           pip install git-changelog
           git-changelog -B ${{ needs.bump-version.outputs.version }} -c angular -o CHANGELOG.md -s "fix,feat,doc"
       - name: Upload Chart.yaml for other flows 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: changelog
           path: CHANGELOG.md
