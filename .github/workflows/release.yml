@@ -4,10 +4,10 @@ on:
       - main
 jobs:
   version:
-    uses: AaronSeibert/ci-utils/shared-gh-workflows/autoversion.yml@main
+    uses: AaronSeibert/ci-utils/.github/workflows/autoversion.yml@main
   helmdocs:
     needs: version
-    uses: AaronSeibert/ci-utils/shared-gh-workflows/helmdocs.yml@main
+    uses: AaronSeibert/ci-utils/.github/workflows/helmdocs.yml@main
   commit-updates:
     runs-on: ubuntu-latest
     needs: [version, helmdocs]
