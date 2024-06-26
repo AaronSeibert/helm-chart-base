@@ -38,12 +38,12 @@ jobs:
           VERSION: ${{ needs.bump-version.outputs.version }}
         run: |
           sed -i "s/^version:.*/version: $VERSION/g" ./Chart.yaml
-          git commit -am "[skip ci] Updated Chart Version"
+          git commit -am "ci: Updated Chart Version [skip ci]"
       - name: Create Changelog
         run: |
           pip install git-changelog
-          git-changelog -B ${{ needs.bump-version.outputs.version }} -o CHANGELOG.md
-          git commit -am "[skip ci] Updated Changelog"
+          git-changelog -B ${{ needs.bump-version.outputs.version }} -o CHANGELOG.md -s "fix,feat,doc"
+          git commit -am "ci: Updated Changelog [skip ci]"
       - name: Commit with version
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
