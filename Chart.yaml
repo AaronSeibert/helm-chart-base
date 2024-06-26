@@ -2,7 +2,7 @@
 apiVersion: v2
 type: library
 name: base
-description: Base Helm Chart
+description: Library chart for common functionality in other charts
 version: 0.7.2
 appVersion: ""
 home: https://charts.seibert.family
