@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.6.0](https://github.com/AaronSeibert/helm-chart-base/releases/tag/0.6.0) - 2024-06-26
+
+<small>[Compare with 0.5.0](https://github.com/AaronSeibert/helm-chart-base/compare/0.5.0...0.6.0)</small>
+
+### Bug Fixes
+
+- update upload-artifact version and fix file extraction ([ad08e68](https://github.com/AaronSeibert/helm-chart-base/commit/ad08e688b2e0b03c50af42f448e40272ccb90276) by Aaron Seibert).
+- add debug ([35217ae](https://github.com/AaronSeibert/helm-chart-base/commit/35217ae31e3ae963d2d561cf4b1ea610cfa83e62) by Aaron Seibert).
+- change artifact process ([ff90d76](https://github.com/AaronSeibert/helm-chart-base/commit/ff90d7693840dd5028f5a6fbb19ef87ee54f4ecd) by Aaron Seibert).
+- added checkout and moved git config ([ba59e11](https://github.com/AaronSeibert/helm-chart-base/commit/ba59e116a41fe8212960a97de94f64b6a0788ee9) by Aaron Seibert).
+- actually add the workflow files.. ([7ae0699](https://github.com/AaronSeibert/helm-chart-base/commit/7ae0699f18966ac754f0344bff292e7d36a90279) by Aaron Seibert).
+
+### Features
+
+- break apart workflows ([88f3cdc](https://github.com/AaronSeibert/helm-chart-base/commit/88f3cdc6d6aea0033aa82689fe2d9f5cb78ef20c) by Aaron Seibert).
+
 ## [0.5.0](https://github.com/AaronSeibert/helm-chart-base/releases/tag/0.5.0) - 2024-06-26
 
 <small>[Compare with 0.4.0](https://github.com/AaronSeibert/helm-chart-base/compare/0.4.0...0.5.0)</small>
