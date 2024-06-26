@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.8.0](https://github.com/AaronSeibert/helm-chart-base/releases/tag/0.8.0) - 2024-06-26
+
+<small>[Compare with 0.7.2](https://github.com/AaronSeibert/helm-chart-base/compare/0.7.2...0.8.0)</small>
+
+### Features
+
+- update description ([a0d5489](https://github.com/AaronSeibert/helm-chart-base/commit/a0d54893253cdcd28683bdb77c721e382867dc6a) by Aaron Seibert).
+- implement auto-trigger of charts repo update ([6424a33](https://github.com/AaronSeibert/helm-chart-base/commit/6424a33cb02c2a4eb386ba89d6a3d7550ecd634b) by Aaron Seibert).
+
 ## [0.7.2](https://github.com/AaronSeibert/helm-chart-base/releases/tag/0.7.2) - 2024-06-26
 
 <small>[Compare with 0.7.1](https://github.com/AaronSeibert/helm-chart-base/compare/0.7.1...0.7.2)</small>

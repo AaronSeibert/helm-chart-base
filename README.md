@@ -2,9 +2,9 @@
 
 # base
 
-Base Helm Chart
+Library chart for common functionality in other charts
 
-[![release](https://github.com/AaronSeibert/helm-chart-base/actions/workflows/ci.yml/badge.svg)](https://github.com/AaronSeibert/helm-chart-base/actions/workflows/ci.yml) ![Version: 0.7.2](https://img.shields.io/badge/Version-0.7.2-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square)
+[![release](https://github.com/AaronSeibert/helm-chart-base/actions/workflows/ci.yml/badge.svg)](https://github.com/AaronSeibert/helm-chart-base/actions/workflows/ci.yml) ![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square)
 
 ## Source Code
 
@@ -49,4 +49,4 @@ $ helm delete base
 
 ## License
 
-[MIT](../LICENSE.md) – © 2024 [Aaron Seibert](https://charts.seibert.family)
+[MIT](../LICENSE.md) – © 2024 [Aaron Seibert](https://aaronseibert.github.io)
