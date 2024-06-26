@@ -16,6 +16,13 @@ jobs:
           go-version: '1.22'
       - name: Install Helm Docs
         run: go install github.com/norwoodj/helm-docs/cmd/helm-docs@latest
+      - name: Retrieve Generated Files
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+      - name: Update Chart.yaml
+        run: cat artifacts/Chart.yaml > Chart.yaml
       - name: Generate README.md
         run: $HOME/go/bin/helm-docs -t ./helm-docs/templates/common.gotmpl -t ./helm-docs/templates/chart.gotmpl
       - name: Upload readme for other flows 
