@@ -49,4 +49,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git tag -a ${{ needs.bump-version.outputs.version }} -m "[skip ci] version ${{ needs.bump-version.outputs.version }}"
-          git push origin tag ${{ needs.bump-version.outputs.version }}
+          git push --follow-tags
