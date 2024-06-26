@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.7.0](https://github.com/AaronSeibert/helm-chart-base/releases/tag/0.7.0) - 2024-06-26
+
+<small>[Compare with 0.6.1](https://github.com/AaronSeibert/helm-chart-base/compare/0.6.1...0.7.0)</small>
+
+### Bug Fixes
+
+- move to .github/workflows ([402d341](https://github.com/AaronSeibert/helm-chart-base/commit/402d341a468355634bfdd75fb4ca97fe5cd40e1a) by Aaron Seibert).
+
+### Features
+
+- implement central reusable workflows ([35717d3](https://github.com/AaronSeibert/helm-chart-base/commit/35717d36a5ccbe2510da194118534e89e1c5f416) by Aaron Seibert).
+
 ## [0.6.1](https://github.com/AaronSeibert/helm-chart-base/releases/tag/0.6.1) - 2024-06-26
 
 <small>[Compare with 0.6.0](https://github.com/AaronSeibert/helm-chart-base/compare/0.6.0...0.6.1)</small>
