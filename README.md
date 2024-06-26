@@ -4,11 +4,11 @@
 
 Base Helm Chart
 
-![Version: 1.0.5](https://img.shields.io/badge/Version-1.0.5-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square)
+![Version: 0.3.2](https://img.shields.io/badge/Version-0.3.2-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square)
 
 ## Source Code
 
-* <https://github.com/aaronseibert/helm-charts>
+* <https://github.com/AaronSeibert/helm-chart-base>
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Base Helm Chart
 To use this chart add the repo as follows:
 
 ```console
-$ helm repo add aaronseibert https://helm.seibert.family
+$ helm repo add AaronSeibert https://charts.seibert.family
 ```
 
 If you had already added this repo earlier, run `helm repo update` to retrieve the latest versions of the packages.
@@ -27,7 +27,7 @@ If you had already added this repo earlier, run `helm repo update` to retrieve t
 To install this chart simply run the following command:
 
 ```console
-$ helm install base aaronseibert/base
+$ helm install base /base
 ```
 
 To uninstall this chart simply run the following command:
@@ -45,8 +45,8 @@ $ helm delete base
 
 | Name | Email | Url |
 | ---- | ------ | --- |
-| aaronseibert | <aaron@awseibert.net> |  |
+| AaronSeibert | <aaron@awseibert.net> |  |
 
 ## License
 
-[MIT](../LICENSE.md) – © 2023 [Aaron Seibert](https://helm.seibert.family)
+[MIT](../LICENSE.md) – © 2024 [Aaron Seibert](https://charts.seibert.family)
