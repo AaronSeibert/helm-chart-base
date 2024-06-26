@@ -48,12 +48,9 @@ jobs:
     steps:
       - name: Trigger Helm Repo Update
         run: |
-          repo_owner="AaronSeibert"
-          repo_name="charts-seibert-family"
-          event_type="chart-release"
           curl -L \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.CHART_REPO_TRIGGER_TOKEN }}" \
-            https://api.github.com/repos/$repo_owner/$repo_name/dispatches \
-            -d '{"event_type": "$event_type", "client_payload": {}}'
+            https://api.github.com/repos/AaronSeibert/charts-seibert-family/dispatches \
+            -d '{"event_type": "chart-release", "client_payload": {}}'
