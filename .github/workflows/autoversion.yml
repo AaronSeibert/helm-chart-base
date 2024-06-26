@@ -42,7 +42,7 @@ jobs:
       - name: Create Changelog
         run: |
           pip install git-changelog
-          git-changelog -B ${{ needs.bump-version.outputs.version }} -c Angular -o CHANGELOG.md -s "fix,feat,doc"
+          git-changelog -B ${{ needs.bump-version.outputs.version }} -c angular -o CHANGELOG.md -s "fix,feat,doc"
           git commit -am "ci: Updated Changelog [skip ci]"
       - name: Commit with version
         env:
